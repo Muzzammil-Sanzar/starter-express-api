@@ -38,3 +38,28 @@ exports.getNewsLatter = async (req, res) => {
     });
   }
 }
+
+exports.deleteNewsLetter = async (req, res) => {
+  try {
+    const data = await NewsLatter.deleteOne({ _id: req.params.id });
+    if (data.acknowledged && data.deletedCount > 0) {
+      res.send({
+        success: true,
+        message: 'News Letter deleted successfully',
+        data: data
+      });
+    } else {
+      res.send({
+        success: true,
+        message: "can't find News Letter!",
+        data: data
+      });
+    }
+  } catch (error) {
+    res.status(505).send({
+      success: false,
+      error: error.message,
+      message: 'Error fetching newslatter ' + error.message,
+    });
+  }
+}
