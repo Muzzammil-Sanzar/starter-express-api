@@ -11,6 +11,7 @@ router.post('/email', userController.emailVerification);
 router.post('/login', userController.login);
 router.post('/update-password', userController.updatePassword);
 router.get('/get-user', auth, userController.getUser);
+router.get('/test', userController.testUser);
 router.post('/update', auth, userController.updateUser);
 
 module.exports = router;

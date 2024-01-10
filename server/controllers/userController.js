@@ -205,6 +205,15 @@ exports.getUser = async (req, res) => {
   }
 };
 
+exports.testUser = async (req, res) => {
+  try {
+    res.send({ success: true, data: 'working' });
+    // res.send(req.headers.authorization)
+  } catch (error) {
+    res.send({ error: error.message });
+  }
+};
+
 exports.updateUser = async (req, res) => {
   try {
     const body = {

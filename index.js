@@ -12,6 +12,8 @@ var http = require('http');
 // var usersRouter = require('./routes/users');
 var resturantRoutes = require('./server/routes/resturantRoutes');
 var orderRoutes = require('./server/routes/orderRoutes');
+var newslatterRoutes = require('./server/routes/newsLatterRoutes');
+// var userRoutes = require('./server/routes/users');
 
 // Database connection
 const connectDB = require('./server/config/db');
@@ -31,6 +33,8 @@ app.use(cors());
 
 app.use('/resturant', resturantRoutes);
 app.use('/order', orderRoutes);
+app.use('/newslatter', newslatterRoutes);
+// app.use('/user', userRoutes);
 
 // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
