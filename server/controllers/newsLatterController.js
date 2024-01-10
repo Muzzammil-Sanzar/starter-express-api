@@ -14,7 +14,7 @@ exports.createNewsLatter = async (req, res) => {
       data: data
     });
   } catch (error) {
-    res.send({
+    res.status(505).send({
       success: false,
       error: error.message,
       message: 'Request failed, an error occured, please try again.',
