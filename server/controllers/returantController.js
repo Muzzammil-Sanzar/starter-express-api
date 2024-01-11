@@ -40,6 +40,22 @@ exports.getAllResturants = async (req, res) => {
   }
 }
 
+exports.totalResturants = async (req, res) => {
+  try {
+    const data = await Resturants.estimatedDocumentCount();
+    res.send({
+      success: true,
+      data: data
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      error: error.message,
+      message: 'Request failed, an error occured, please try again.',
+    });
+  }
+}
+
 exports.deleteResturant = async (req, res) => {
   try {
 
